@@ -1,0 +1,63 @@
+@import '../static/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,500,600,700,800');
+
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+p, a, h1, h2, h3, h4, h5 {
+  color: $font1;
+}
+
+.App {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: $color5;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $color3;
+}
+
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: $bg2;
+  padding: 80px 20px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .body-text {
+    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    font-size: 1.7rem;
+    font-weight: 400;
+    white-space: pre-line;
+
+    span {
+      font-weight: 500;
+    }
+
+  }
+}
+
+.body-text {
+  font-size: $body-text1;
+  font-weight: 300;
+  white-space: pre-line;
+}

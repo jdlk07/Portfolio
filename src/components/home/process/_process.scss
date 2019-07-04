@@ -1,0 +1,20 @@
+.process-wrapper {
+  .body-text {
+  }
+
+  .animations-wrapper {
+    display: flex;
+    margin: 80px auto 0 auto;
+    max-width: $desktop-width;
+    justify-content: space-between;
+
+    .svg-container {
+      width: 300px;
+
+      svg {
+        width: 100%;
+      }
+    }
+
+  }
+}

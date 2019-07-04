@@ -1,0 +1,48 @@
+@import '../../static/mixins.scss';
+
+.scroll-icon-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .mouse-outer {
+    width: 33px;
+  }
+
+  .mouse-inner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: mouse-icon-animation;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+  }
+}
+
+@include keyframes(mouse-icon-animation) {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-50%, 100%);
+  }
+  40% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 0);
+  }
+  60% {
+    opacity: 1;
+  }
+}

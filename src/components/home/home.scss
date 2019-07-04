@@ -1,0 +1,11 @@
+@import '../static/variables.scss';
+@import '../static/mixins.scss';
+
+.home-wrapper {
+  background-image: $bg1;
+
+  @import './intro/intro.scss';
+  @import './process/process.scss';
+  @import './about/about.scss';
+
+}
