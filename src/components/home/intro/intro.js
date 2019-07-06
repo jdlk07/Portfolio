@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import {TweenMax, TimelineLite } from 'gsap/all'
+import { TimelineLite } from 'gsap/all'
 
 import ScrollIcon from './../../elements/scrollIcon/scrollIcon'
-
-import HeroImg from './media/hero.png'
 
 // const process = (props) => {
 //   return (
@@ -77,7 +75,7 @@ export default class Intro extends Component {
   }
 
   scrollHandler(event) {
-    if (window.pageYOffset == 0) {
+    if (window.pageYOffset === 0) {
       if (event.nativeEvent.wheelDelta > 0 && this.state.expand) {
         console.log('scrolled Up!')
         this.setState({expand: !this.state.expand})
@@ -102,9 +100,9 @@ export default class Intro extends Component {
   componentDidMount() {
     this.myTween = new TimelineLite({paused: true, onComplete: this.animationCompleteHandler })
       .to(this.scrollIcon, 0.5, {opacity: 0, ease: 'Power1.easeOut'})
-      .to(this.heroContainer, 0.8, {height: '70%', marginRight: '20%', delay: -0.5, ease: 'Power3.easeInOut'})
-      .to(this.heroImage, 0.8, {scale: '1.5', x: '6%', delay: -0.8, ease: 'Power3.easeInOut'})
-      .to(this.textContainer, 0.8 ,{scale: 1, delay: -0.8, ease: 'Power3.easeInOut'})
+      .to(this.heroContainer, 0.8, {height: '70%', marginRight: '20%', delay: -0.5, ease: 'Power4.easeInOut'})
+      .to(this.heroImage, 0.8, {scale: '1.2', x: '6%', delay: -0.8, ease: 'Power4.easeInOut'})
+      .to(this.textContainer, 0.8 ,{scale: 1, delay: -0.8, ease: 'Power4.easeInOut'})
       .to(this.readMoreBtn, 0.5, {opacity: 0, y: '-100%', cursor: 'none', delay: -0.5, ease: 'Power1.easeOut'})
       .to(this.textContainer, 0.5 ,{y: 0, delay: 0.1, ease: 'Power3.easeOut'})
       .to(this.bodyText2, 0.5, {opacity: 1, y: 0, delay: -0.5, ease: 'Power2.easeOut'})
@@ -112,13 +110,16 @@ export default class Intro extends Component {
       .to(this.scrollIcon, 0.5, {opacity: 1, ease: 'Power1.easeIn'})
 
 //Locks scrolling on load / update if at the top of the page.
-      if (window.pageYOffset == 0) {
-        console.log("hidden on mount")
+console.log(window.scrollY)
+      if (window.pageYOffset === 0) {
+        console.log("hidden on mount!")
         document.body.style.overflow = 'hidden'
+      } else {
+        this.setState({expand: true})
       }
 //Locks scrolling and changes expand state back to false when the top of the page is reached.
       window.onscroll = () => {
-        if (window.pageYOffset == 0) {
+        if (window.pageYOffset === 0) {
           document.body.style.overflow = 'hidden'
           this.setState({expand: false})
         }
@@ -161,7 +162,7 @@ export default class Intro extends Component {
         </div>
         <div className='hero-image-wrapper'>
           <div className='hero-image-container' ref={elem => this.heroContainer = elem}>
-            <img className='hero-image' src={HeroImg} ref={elem => this.heroImage = elem}/>
+            <img className='hero-image' src={this.props.Data.heroImg} ref={elem => this.heroImage = elem}/>
             <p className='hero-image-caption'>{this.props.Data.imageCaption}</p>
           </div>
         </div>

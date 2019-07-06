@@ -17,35 +17,53 @@ p, a, h1, h2, h3, h4, h5 {
 
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
-    background: $color5;  /* Optional: just make scrollbar invisible */
+    background: $color1;  /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background: $color3;
+    background: $color2;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .width-limiter-container {
+    margin: 80px auto;
+    width: 100%;
+    max-width: $desktop-width;
+  }
 }
 
 .banner-wrapper {
   position: relative;
   width: 100%;
   background-color: $bg2;
-  padding: 80px 20px;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  padding: 40px 20px;
+  box-shadow: 0 3px 2px $box-shadow-color;
   text-align: center;
 
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.3);
+    height: 10%;
+    box-shadow: 0 -3px 2px $box-shadow-color;
   }
 
-  .body-text {
+  .banner-header {
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .banner-body-text {
     // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    font-size: 1.7rem;
+    font-size: $body-text1;
     font-weight: 400;
     white-space: pre-line;
 

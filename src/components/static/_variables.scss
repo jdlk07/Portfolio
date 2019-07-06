@@ -2,17 +2,19 @@ $desktop: 768px;
 $desktop-width: 1290px;
 
 // $bg1: linear-gradient(to right, #2B809A 40%, #499DB7);
-$bg1: linear-gradient(to right, #1341bb 40%, #0A74D1);
+$bg1: linear-gradient(to right, #1341bb 60%, #0A74D1);
 // $bg2: #85CDCA;
 // $bg2: #85CFE5;
 $bg2: #001D6E;
 
-$color1: #2B809A;
-$color2: #60ABC2;
-$color3: #029CA0;
-$color4: #48B3A2;
-$color5: #ED7300;
+$color1: #ED7300;
+$color2: #C64628;
+$color3: #0A74D1;
+$color4: #002a9e;
 
 $font1: #F6F6F6;
 
 $body-text1: 1.55rem;
+$banner-body-text: 1.6rem;
+
+$box-shadow-color: rgba(0, 0, 0, 0.3);

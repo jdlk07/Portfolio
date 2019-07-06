@@ -1,0 +1,13 @@
+.text-component-container {
+  width: 500px;
+  .text-component-header{
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: $color1;
+  }
+  .text-component-sub-header {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}

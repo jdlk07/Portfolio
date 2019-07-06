@@ -1,0 +1,23 @@
+.contact-wrapper {
+  .contact-container {
+    text-align: center;
+
+    .email-link {
+      text-decoration: none;
+      font-size: 3.4rem;
+      font-weight: 500;
+    }
+    .logo-container {
+      margin-top: 20px;
+
+      .logo-image {
+        margin: 40px;
+        transition: 200ms;
+
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+    }
+  }
+}

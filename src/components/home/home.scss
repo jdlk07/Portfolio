@@ -4,8 +4,12 @@
 .home-wrapper {
   background-image: $bg1;
 
+  @import '../elements/textComponent/textComponent.scss';
   @import './intro/intro.scss';
   @import './process/process.scss';
   @import './about/about.scss';
+  @import './servicesAndTech/servicesAndTech.scss';
+  @import './contact/contact.scss';
+  @import './footer/footer.scss';
 
 }

@@ -1,0 +1,40 @@
+@import '../../static/mixins.scss';
+
+.footer-wrapper {
+  background-color: rgba(0, 0, 0, 0.08);
+  height: 50px;
+  margin-top: -50px;
+  .footer-container {
+    height: 100%;
+    width: $desktop-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgb(154, 154, 154);
+    }
+
+    .footer-text-2-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .powered-by-image {
+      @include keyframes(react-animation) {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(359deg);
+        }
+      }
+      height: 30px;
+      animation-name: react-animation;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
