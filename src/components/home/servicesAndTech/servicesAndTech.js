@@ -1,60 +1,26 @@
 import React, { Component } from 'react'
 import { Transition, TransitionGroup } from 'react-transition-group'
 import { TweenMax, TimelineLite } from 'gsap/all'
+import VisibilitySensor from 'react-visibility-sensor'
 
+import ServicesBody from './components/servicesBody'
+import TechBody from './components/techBody'
 
-const ServiceItem = (props) => {
-  return (
-    <div className='service-item-container'>
-      <h4 className='header'>{props.data.header}</h4>
-      {props.data.body.map((item, index) =>
-        <p className='body-text' key={index}>{item}</p>
-      )}
-    </div>
-  )
-}
-
-const ServiceBody = (props) => {
-  return (
-    <div className='services-body-container'>
-      {props.data.map((service, index) => {
-        return (
-          <ServiceItem data={service} key={index}/>
-        )
-      })}
-    </div>
-  )
-}
-
-const TechBody = (props) => {
-  return (
-    <div className='tech-body-container'>
-      {props.data.map((logo, index) => {
-        return (
-          <div className='tech-logo-container'>
-            <img className='tech-logo' src={logo}/>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
 
 const TextComponent = (props) => {
   return (
     <div className='text-component-container'>
-      <a className={`text-component-header${props.show ? ' ' : ' inactive'}`} onClick={props.handler}>{props.data.header}</a>
+      <h2 className={`text-component-header${props.show ? ' ' : ' inactive'}`} onClick={props.handler}>{props.data.header}</h2>
       <Transition
-        timeout={1000}
-        mountOnEnter
-        unmountOnExit
         appear
         in={props.show}
         addEndListener={(node, done) => {
-          TweenMax.to(node, 0.5, {
+          TweenMax.to(node, 1, {
             autoAlpha: props.show ? 1 : 0,
-            x: props.show ? 0 : props.alternate ? '-40%' : '40%',
+            x: props.show ? '0%' : props.alternate ? '30%' : '-30%',
+            ease: 'Power2.easeOut',
             onComplete: done,
+            delay: 1
           })
         }}
         >
@@ -67,43 +33,64 @@ const TextComponent = (props) => {
   )
 }
 
+
 export default class ServicesAndTech extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      servicesShow: true,
-      techShow: false
+      servicesShow: false,
+      techShow: false,
+      viewed: false
     }
 
+    this.visibilityHandler = this.visibilityHandler.bind(this)
     this.techStateHandler = this.techStateHandler.bind(this)
     this.servicesStateHandler = this.servicesStateHandler.bind(this)
+    this.techExitHandler = this.techExitHandler.bind(this)
+    this.servicesExitHandler = this.servicesExitHandler.bind(this)
+  }
+  visibilityHandler(isVisible) {
+    if (isVisible) {
+      this.setState({
+        servicesShow: true,
+        viewed: true
+      })
+    }
   }
 
   techStateHandler() {
     this.setState({servicesShow: false})
-    setTimeout(()=>{this.setState({techShow: true})}, 200)
+    // setTimeout(() => {this.setState({techShow: true})}, 1500)
   }
   servicesStateHandler() {
     this.setState({techShow: false})
-    setTimeout(()=>{this.setState({servicesShow: true})}, 200)
+  }
+  techExitHandler() {
+    this.setState({servicesShow: true})
+  }
+  servicesExitHandler() {
+    this.setState({techShow: true})
   }
 
   render() {
-    console.log(this.state.alternate)
     return (
-      <div className='services-and-tech-wrapper flex-wrapper'>
-        <div className='services-and-tech-container width-limiter-container'>
-          <div className='header-components-container'>
-            <TextComponent data={this.props.Data.services.textComponent} show={this.state.servicesShow} handler={this.servicesStateHandler}/>
-            <TextComponent data={this.props.Data.tech.textComponent} show={this.state.techShow} handler={this.techStateHandler} alternate/>
-          </div>
-          <div className='body-components-container'>
-            <ServiceBody data={this.props.Data.services.servicesOffered}/>
-            <TechBody data={this.props.Data.tech.techLogos}/>
+      <VisibilitySensor onChange={this.visibilityHandler} partialVisibility minTopValue={600} active={!this.state.viewed}>
+        <div className='services-and-tech-wrapper flex-wrapper'>
+          <div className='services-and-tech-container width-limiter-container'>
+            <div className='header-components-container'>
+              <TextComponent data={this.props.Data.services.textComponent} show={this.state.servicesShow} handler={this.servicesStateHandler}/>
+              <TextComponent data={this.props.Data.tech.textComponent} show={this.state.techShow} handler={this.techStateHandler} alternate/>
+            </div>
+            <div className='body-components-container'>
+              <ServicesBody data={this.props.Data.services.servicesOffered}
+              show={this.state.servicesShow} exitHandler={this.servicesExitHandler}/>
+              <TechBody data={this.props.Data.tech.techLogos}
+              show={this.state.techShow} exitHandler={this.techExitHandler}/>
+            </div>
           </div>
         </div>
-      </div>
+      </VisibilitySensor>
     )
   }
 }

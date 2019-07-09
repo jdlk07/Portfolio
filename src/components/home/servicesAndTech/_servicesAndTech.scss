@@ -1,5 +1,6 @@
 .services-and-tech-wrapper {
   .services-and-tech-container {
+    min-height: 990px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,42 +11,53 @@
       justify-content: space-between;
       .text-component-header {
         cursor: pointer;
-        transition: 200ms;
+        transition: 400ms;
 
         &.inactive {
           color: $color2;
+          opacity: 0.9;
           &:hover {
             color: $color1;
+            opacity: 1;
           }
         }
       }
       .animated-container {
+        // height: 0%;
         opacity: 0;
-        transform: translateX(20%);
+        overflow: hidden;
+        transform: translateX(-20%); //Animated properties
       }
       .text-component-container:nth-child(2) {
         text-align: right;
         .animated-container {
-          transform: translateX(-20%);
+          transform: translateX(20%); //Animated properties
         }
       }
     }
 
     .body-components-container {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 25px;
 
       .services-body-container {
+        perspective: 1000px;
         .service-item-container {
+          position: relative;
           width: 600px;
           margin: 20px auto;
           padding: 30px;
+          // opacity: 0;
           background-color: $color4;
           .header {
             margin-bottom: 7px;
             color: $color1;
             font-size: $body-text1;
             font-weight: 600;
+            // opacity: 0;
+          }
+          .body-text-container {
+            // opacity: 0;
           }
         }
       }

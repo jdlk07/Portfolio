@@ -39,7 +39,7 @@ export const About = {
   section1: {
     header: 'ABOUT.',
     subHeader: 'Programmer / Explorer',
-    body: 'I love discover new tech, new countries, and new cultures. I travel any chance I get and my computers never more than an arms reach away.'
+    body: 'I love discovering new tech, new countries, and new cultures. I travel any chance I get and my computers never more than an arms reach away.'
   },
   section2: {
     header: '',
@@ -132,5 +132,5 @@ export const Contact = {
 export const Footer = {
   copyright: '2019 Design & build by Janath Dinesh Perera',
   poweredBy: 'Powered with ',
-  logo: TechLogo6
+  logo: TechLogo3
 }

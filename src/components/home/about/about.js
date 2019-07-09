@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import TextComponent from '../../elements/textComponent/textComponent'
-
 import Map from './map/map'
 
 import learningImg from './media/reactNative.png'
@@ -23,6 +22,7 @@ const LearningComponent = (props) => {
 
 
 export default class About extends Component {
+
   render() {
     return(
       <div className='about-wrapper flex-wrapper'>

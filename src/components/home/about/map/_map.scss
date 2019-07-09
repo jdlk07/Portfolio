@@ -1,6 +1,8 @@
 .map-wrapper {
-  height: 400px;
-  width: 600px;
+  $map-height: 400px;
+  $map-width: 600px;
+  height: $map-height;
+  width: $map-width;
   .images-container {
     position: relative;
     height: 80%;
@@ -13,10 +15,23 @@
     height: 100%;
     width: 100%;
   }
+  .plane-orbit {
+    position: absolute;
+    top: -50px;
+    left: (($map-width / 2 )- ($map-height / 2));
+    width: $map-height;
+    height: $map-height;
+    border-radius: 50%;
+    animation-name: plane-orbit-animation;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
   .plane-svg {
     position: absolute;
     height: 150px;
-    bottom: 0;
+    top: 0;
+    transform: rotate(-49deg)
   }
   .text-container {
     display: flex;
@@ -33,6 +48,15 @@
       &:nth-child(2) {
         margin-left: 20px;
       }
+    }
+  }
+
+  @include keyframes(plane-orbit-animation) {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(359deg);
     }
   }
 }

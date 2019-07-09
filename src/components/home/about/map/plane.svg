@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="55.917" height="57.724" viewBox="0 0 55.917 57.724">
-  <g id="Plane" transform="translate(-11.473 5.264) rotate(-18)">
-    <g id="shadow" transform="translate(29.092 26.442) rotate(30)" opacity="0.62">
+<svg xmlns="http://www.w3.org/2000/svg" width="64.456" height="61.513" viewBox="0 0 64.456 61.513">
+  <g id="Plane" transform="translate(-6.601 7.033) rotate(-18)">
+    <g id="shadow" transform="matrix(0.485, 0.875, -0.875, 0.485, 41.282, 26.548)" opacity="0.62">
       <g id="Group_12" data-name="Group 12" transform="translate(10.616 2.09)">
         <path id="Path_63" data-name="Path 63" d="M2.873,5.475a.918.918,0,0,1-1.3,0l-1.3-1.3a.918.918,0,0,1,0-1.3l2.6-2.6a.919.919,0,0,1,1.3,0l1.3,1.3a.918.918,0,0,1,0,1.3Z" transform="translate(13.805 13.804)"/>
         <path id="Path_64" data-name="Path 64" d="M2.873,5.475a.918.918,0,0,1-1.3,0l-1.3-1.3a.918.918,0,0,1,0-1.3l2.6-2.6a.919.919,0,0,1,1.3,0l1.3,1.3a.918.918,0,0,1,0,1.3Z" transform="translate(0 0)"/>
@@ -15,7 +15,7 @@
         <path id="Path_69" data-name="Path 69" d="M0,.92A2.761,2.761,0,0,1,2.761,3.681H3.5a2.684,2.684,0,0,0,.18-.92A2.761,2.761,0,0,0,.92,0,2.68,2.68,0,0,0,0,.179Z" transform="translate(22.102 0)"/>
       </g>
     </g>
-    <g id="airplane" transform="translate(21.436 0) rotate(30)">
+    <g id="airplane" transform="matrix(0.485, 0.875, -0.875, 0.485, 37.638, 0.141)">
       <g id="Group_12-2" data-name="Group 12" transform="translate(14.11 2.778)">
         <path id="Path_63-2" data-name="Path 63" d="M3.819,7.277a1.22,1.22,0,0,1-1.73,0L.36,5.548a1.22,1.22,0,0,1,0-1.73L3.819.359a1.222,1.222,0,0,1,1.73,0l1.73,1.73a1.22,1.22,0,0,1,0,1.73Z" transform="translate(18.348 18.348)" fill="#eb917c"/>
         <path id="Path_64-2" data-name="Path 64" d="M3.819,7.277a1.22,1.22,0,0,1-1.73,0L.36,5.548a1.22,1.22,0,0,1,0-1.73L3.819.359a1.222,1.222,0,0,1,1.73,0l1.73,1.73a1.22,1.22,0,0,1,0,1.73Z" transform="translate(0 0)" fill="#eb917c"/>

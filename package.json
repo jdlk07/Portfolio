@@ -10,6 +10,7 @@
     "react-scripts": "3.0.1",
     "react-scrollmagic": "^2.1.0",
     "react-transition-group": "^4.2.1",
+    "react-visibility-sensor": "^5.1.0",
     "styled-components": "^4.3.2"
   },
   "scripts": {
