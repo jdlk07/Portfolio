@@ -84,7 +84,7 @@ export const ServicesAndTech = {
         header: 'Back End Development',
         body: [
           'Back end logic for web applications',
-          'Database design and creation'
+          'Database design and integration'
         ]
       },
       {
@@ -100,7 +100,7 @@ export const ServicesAndTech = {
     textComponent: {
       header: 'TECH.',
       subHeader: 'Programmer - Designer',
-      body: 'Initially a python programmer, the urge to create application as they were envisioner paved the way to finding the most programmatic methods of design.',
+      body: 'Initially a python programmer, the urge to create application as they were envisioned paved the way to finding the most programmatic methods of design.',
     },
     techLogos: [TechLogo1,TechLogo2,TechLogo3,TechLogo4,TechLogo5,TechLogo6,TechLogo7,TechLogo8,TechLogo9,TechLogo10,TechLogo11,TechLogo12,]
   }

@@ -3,54 +3,6 @@ import { TimelineLite } from 'gsap/all'
 
 import ScrollIcon from './../../elements/scrollIcon/scrollIcon'
 
-// const process = (props) => {
-//   return (
-//     <div className='process-container'>
-//       <div className='text-wrapper'>
-//         <p>{this.props.Data[0]}</p>
-//         <span className='dot'></span>
-//         <p>{this.props.Data[1]}</p>
-//         <span className='dot'></span>
-//         <p>{this.props.Data[2]}</p>
-//       </div>
-//       <hr/>
-//     </div>
-//   )
-// }
-//
-// const Headers = (props) => {
-//   return (
-//     <div className='headers-container'>
-//       <h2 className='header-1'>{this.props.Data.header1}</h2>
-//       <h2 className='header-2'>{this.props.Data.header2}</h2>
-//       <h2 className='header-3'>{this.props.Data.header3}</h2>
-//     </div>
-//   )
-// }
-//
-// const Body = React.forwardRef((props, ref) => {
-//   const { text2Ref, text3Ref } = ref
-//   return (
-//     <div className='body-container'>
-//       <p className='body-text body-text-1'>{this.props.Data.paragraph1}</p>
-//       <a className='read-more-btn' onClick={this.props.clickHandler}>Read More</a>
-//       <p className='body-text body-text-2' ref={text2Ref}>{this.props.Data.paragraph2}</p>
-//       <p className='body-text body-text-3' ref={text3Ref}>{this.props.Data.paragraph3}</p>
-//     </div>
-//   )
-// })
-//
-// const Hero = React.forwardRef((props, ref) => {
-//   const { containerRef, imgRef } = ref
-//   return (
-//     <div className='hero-image-wrapper'>
-//       <div className='hero-image-container' ref={containerRef}>
-//         <img className='hero-image' src={HeroImg} ref={imgRef}/>
-//       </div>
-//     </div>
-//   )
-// })
-
 export default class Intro extends Component {
   constructor(props) {
     super(props)

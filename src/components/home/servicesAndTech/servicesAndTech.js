@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Transition, TransitionGroup } from 'react-transition-group'
+import { Transition } from 'react-transition-group'
 import { TweenMax, TimelineLite } from 'gsap/all'
 import VisibilitySensor from 'react-visibility-sensor'
 
@@ -26,7 +26,7 @@ const TextComponent = (props) => {
         >
         <div className='animated-container'>
           <h4 className='text-component-sub-header'>{props.data.subHeader}</h4>
-          <p className='text-component-body-text body-text'>{props.data.body}</p>
+          {/* <p className='text-component-body-text body-text'>{props.data.body}</p> */}
         </div>
       </Transition>
     </div>

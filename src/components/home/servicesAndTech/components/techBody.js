@@ -37,8 +37,17 @@ export default class servicesBody extends Component {
               this.exitHandler(done)
             }
           })
-            .staggerFromTo(this.logoContainer, 0.2,{opacity: 0, scale: 0.8}, {opacity: 1, scale: 1, ease: 'Power1.easeOut'}, 0.1)
-            .staggerFromTo(this.logo, 0.5,{opacity: 0, y: '40%'}, {opacity: 1, y: '0%',ease: 'Back.easeOut'}, 0.2)
+            .staggerFromTo(this.logoContainer, 0.2,{opacity: 0, scale: 0.8}, {
+              opacity: 1,
+              scale: 1,
+              ease: 'Back.easeOut',
+              stagger: {
+                grid: 'auto',
+                from: 'center',
+                each: 0.1
+              }
+              })
+            .staggerFromTo(this.logo, 0.5,{opacity: 0, y: '40%'}, {opacity: 1, y: '0%',ease: 'Back.easeOut'}, 0.1)
             show ? this.myTween.play() : this.myTween.reverse(0)
         }}>
         <div className='tech-body-container'>
