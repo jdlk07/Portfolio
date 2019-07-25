@@ -1,4 +1,7 @@
 @import '../static/variables.scss';
+@import '../static/mixins.scss';
+@import './../elements/loadingScreen/loadingScreen.scss';
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,500,600,700,800');
 
 
@@ -16,13 +19,12 @@ p, a, h1, h2, h3, h4, h5 {
 }
 
 ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: $color1;  /* Optional: just make scrollbar invisible */
+    width: 10px;  /* Remove scrollbar space */
+    background: $bg2  /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background: $color2;
+    background: $color4;
 }
 
 .flex-wrapper {
@@ -30,8 +32,13 @@ p, a, h1, h2, h3, h4, h5 {
   align-items: center;
   flex-direction: column;
 
+  @include mobile {
+    width: 100%;
+    padding: 0 $mobilePadding;
+  }
+
   .width-limiter-container {
-    margin: 80px auto;
+    margin: 150px auto;
     width: 100%;
     max-width: $desktop-width;
   }
@@ -41,9 +48,10 @@ p, a, h1, h2, h3, h4, h5 {
   position: relative;
   width: 100%;
   background-color: $bg2;
-  padding: 40px 20px;
+  padding: 30px 20px;
   box-shadow: 0 3px 2px $box-shadow-color;
   text-align: center;
+  
 
   &:before {
     content: '';
@@ -56,16 +64,24 @@ p, a, h1, h2, h3, h4, h5 {
   }
 
   .banner-header {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 15px;
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 
   .banner-body-text {
     // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    font-size: $body-text1;
+    font-size: $banner-body-text;
     font-weight: 400;
     white-space: pre-line;
+
+    @include mobile {
+      font-size: $mobile-banner-body-text;
+    }
 
     span {
       font-weight: 500;
@@ -76,6 +92,9 @@ p, a, h1, h2, h3, h4, h5 {
 
 .body-text {
   font-size: $body-text1;
-  font-weight: 300;
+  font-weight: 400;
   white-space: pre-line;
+  @include mobile {
+    font-size: $body-text1-mobile;
+  }
 }

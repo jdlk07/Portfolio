@@ -35,7 +35,7 @@ export default class Process extends Component {
   render() {
     return (
       <div className='process-wrapper banner-wrapper'>
-        <p className='banner-body-text'>{this.props.Data.bodyText[0]}<span>{this.props.Data.bodyText[1]}</span>{this.props.Data.bodyText[2]}</p>
+        {/* <p className='banner-body-text'>{this.props.Data.bodyText[0]}<span>{this.props.Data.bodyText[1]}</span>{this.props.Data.bodyText[2]}</p> */}
         <div className='animations-wrapper'>
           <Icons/>
         </div>

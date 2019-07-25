@@ -1,13 +1,27 @@
 .text-component-container {
-  width: 500px;
+  width: 450px;
+
+  @include mobile {
+    width: 100%;
+    text-align: center;
+  }
   .text-component-header{
-    font-size: 3.5rem;
+    font-size: $header-size-1;
     font-weight: 600;
     color: $color1;
+    margin-bottom: 15px;
+
+    @include mobile {
+      font-size: $mobile-header-size-1;
+    }
   }
   .text-component-sub-header {
-    font-size: 2rem;
+    font-size: $header-size-2;
     font-weight: 500;
     margin-bottom: 10px;
+
+    @include mobile {
+      font-size: $mobile-header-size-2;
+    }
   }
 }

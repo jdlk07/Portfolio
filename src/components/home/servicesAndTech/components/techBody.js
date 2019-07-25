@@ -37,7 +37,7 @@ export default class servicesBody extends Component {
               this.exitHandler(done)
             }
           })
-            .staggerFromTo(this.logoContainer, 0.2,{opacity: 0, scale: 0.8}, {
+            .staggerFromTo(this.logoContainer, 0.2,{opacity: 0, scale: 0.7}, {
               opacity: 1,
               scale: 1,
               ease: 'Back.easeOut',

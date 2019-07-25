@@ -10,67 +10,52 @@ export default class Map extends Component {
     super(props)
 
     this.state = {
-      visible: false,
-      viewed: false,
-      countriesCount: 20, //62
-      citiesCount: 30  //95
+      visible: false
     }
 
     this.visibilityHandler = this.visibilityHandler.bind(this)
     
-    this.wrapper = null
-    this.countriesCount = 20
-    this.citiesCount = 30
+    this.map = null
+    this.plane = null
+    this.text = null
   }
 
   visibilityHandler(isVisible) {
     if (isVisible) {
-      this.setState({
-       visible: true,
-       viewed: true
-      })
+      this.setState({ visible: true })
+    } else {
+      this.setState({ visible: false })
     }
-
-
   }
 
   componentDidMount() {
+    const tweenList = [this.map, this.plane, this.text]
     this.myTween = new TimelineLite({ paused: true })
-      .fromTo(this.wrapper, 1, {opacity: 0, y: '5%'}, {opacity: 1, y: '0%', ease: 'Power2.easeOut'})
-      .to(this, 5, {
-        countriesCount: '62',
-        onUpdate: () => this.setState({countriesCount: this.countriesCount}),
-        roundProps: 'countriesCount',
-        ease: 'Power2.easeOut',
-      })
-      .to(this, 7, {
-        citiesCount: '95',
-        onUpdate: () => this.setState({citiesCount: this.citiesCount}),
-        roundProps: 'citiesCount',
-        ease: 'Power2.easeOut',
-        delay: -5
-      })
+    .staggerFromTo(tweenList, 1, { opacity: 0, y: '15%' }, { opacity: 1, y: '0%', ease: 'Power2.easeOut' }, 0.2)
+
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.visible !== this.state.visible && this.state.visible) {
       this.myTween.play()
+    } else {
+      this.myTween.reverse()
     }
   }
 
   render() {
     return(
-      <VisibilitySensor onChange={this.visibilityHandler} partialVisibility minTopValue={300} active={!this.state.viewed}>
-        <div className='map-wrapper' ref={elem => this.wrapper = elem}>
+      <VisibilitySensor onChange={this.visibilityHandler} partialVisibility>
+        <div className='map-wrapper'>
           <div className='images-container'>
-            <MapImg className='map-svg'/>
+            <MapImg className='map-svg' ref={elem => this.map = elem}/>
             <div className='plane-orbit'>
-              <PlaneImg className='plane-svg'/>
+              <PlaneImg className='plane-svg' ref={elem => this.plane = elem}/>
             </div>
           </div>
-          <div className='text-container'>
-            <p className='stats-text'>Countries: <span>{this.state.countriesCount}</span></p>
-            <p className='stats-text'>Cities: <span>{this.state.citiesCount}</span></p>
+          <div className='text-container' ref={elem => this.text = elem}>
+            <p className='stats-text'>Countries: <span>62</span></p>
+            <p className='stats-text'>Cities: <span>95</span></p>
           </div>
         </div>
       </VisibilitySensor>

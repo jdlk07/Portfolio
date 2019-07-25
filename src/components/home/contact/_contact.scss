@@ -1,11 +1,16 @@
 .contact-wrapper {
   .contact-container {
+    margin: 100px auto;
     text-align: center;
 
     .email-link {
       text-decoration: none;
       font-size: 3.4rem;
       font-weight: 500;
+
+      @include mobile {
+        font-size: 1.2rem;
+      }
     }
     .logo-container {
       margin-top: 20px;

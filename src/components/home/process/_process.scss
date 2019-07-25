@@ -1,32 +1,54 @@
 .process-wrapper {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   .banner-body-text {
-    font-size: 2rem;
+    font-size: $banner-body-text-2;
   }
 
   .animations-wrapper {
     display: flex;
     margin: 40px auto 0 auto;
-    max-width: $desktop-width;
+    max-width: $desktop-width - 300px;
     justify-content: space-between;
     align-items: center;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     .icon-wrapper {
-      width: 300px;
+      width: 150px;
+      @include mobile {
+        width: 120px;
+        margin: 20px 0;
+      }
+
+      &:nth-child(2) {
+        width: 140px;
+
+        @include mobile {
+          width: 110px;
+        }
+      }
 
       .svg-container {
       }
 
       svg {
+        height: 100%;
+        width: 100%;
       }
       .icon-title {
         margin-top: 10px;
-        font-size: 2.8rem;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 500;
         letter-spacing: -1px;
         color: $color3;
+
+        @include mobile {
+          font-size: 1.5rem;
+        }
       }
     }
 

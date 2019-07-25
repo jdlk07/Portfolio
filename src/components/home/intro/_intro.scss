@@ -4,13 +4,22 @@
   width: 100vw;
   overflow: hidden;
 
+  @include mobile {
+    width: 100%;
+    padding: 0 $mobilePadding;
+  }
+
   .content-container {
-    width: $desktop-width;
+    max-width: $desktop-width;
     height: 100%;
     margin: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
   }
   .text-container {
     margin-left: 50px;
@@ -20,14 +29,27 @@
     align-items: flex-start;
     transform: scale(1.2) translateY(20%); //animated on expand
 
+    @include mobile {
+      width: 100%;
+      margin: 0;
+      transform: scale(1) translateY(0);
+    }
+
     .process-container {
       width: 400px;
       margin-bottom: 35px;
+
+      @include mobile {
+        width: 80%;
+      }
       .text-wrapper {
         margin-bottom: 8px;
         display: flex;
         font-size: 1.4rem;
         font-weight: 400;
+        @include mobile {
+          font-size: 1rem;
+        }
       }
       .dot {
         height: 5px;
@@ -35,6 +57,11 @@
         margin: auto 10px;
         border-radius: 50%;
         background-color: $font1;
+
+        @include mobile {
+          height: 3px;
+          width: 3px;
+        }
       }
       hr {
         margin-left: -25px;
@@ -43,16 +70,33 @@
 
     .headers-container {
       $small-header: 2.3rem;
+      $small-header-mobile: 1.5rem;
       text-align: right;
+      margin-left: 25px;
+      @include mobile {
+        width:  100%;
+        margin: 0;
+      }
       .header-1 {
         margin-right: 43px;
         font-size: $small-header;
         font-weight: 600;
+
+        @include mobile {
+          margin: 0;
+          margin-right: 15px;
+          font-size: $small-header-mobile;
+        }
       }
       .header-2 {
         margin-right: 20px;
         font-size: $small-header;
         font-weight: 400;
+        @include mobile {
+          margin: 0;
+          margin-right: 10px;
+          font-size: $small-header-mobile;
+        }
       }
       .header-3 {
         margin-left: -25px;
@@ -62,11 +106,20 @@
         letter-spacing: 1px;
         color: $color1;
         // text-shadow: 2px 3px 1px $color3;
+
+        @include mobile {
+          margin: 0;
+          font-size: 3.5rem;
+          text-align: center;
+        }
       }
     }
 
     .body-container {
       width: 390px;
+      @include mobile {
+        width: 100%;
+      }
       .body-text {
         margin: 20px auto;
       }
@@ -79,6 +132,23 @@
       }
       .body-text-3 {
         transform: translateY(-50%); //animated on expand
+      }
+
+    }
+    .mobile-hero-image-wrapper {
+      $size: 150px;
+      height: $size;
+      width: $size;
+      margin: -20px 20px 20px;
+      float: right;
+      // transform: scale(1.2);
+      
+      .mobile-hero-image {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $color1;
       }
     }
 
@@ -103,6 +173,13 @@
     align-items: center;
     justify-content: flex-end;
 
+    @include mobile {
+      // visibility: hidden;
+      height: 350px;
+      width: 350px;
+      border-radius: 50%;
+    }
+
     .hero-image-container {
       position: relative;
       height: 100%; //animated on expand
@@ -112,6 +189,7 @@
       .hero-image {
         height: 100%;
         object-fit: cover;
+        filter: contrast(0.9);
       }
 
       .hero-image-caption {

@@ -12,12 +12,12 @@ import ServicesAndTech from './servicesAndTech/servicesAndTech'
 import Contact from './contact/contact'
 import Footer from './footer/footer'
 
-function Home() {
+function Home(props) {
   return(
     <div className='home-wrapper'>
-      <Intro Data={Data.Intro}/>
+      <Intro Data={Data.Intro} onLoadHandler={props.onLoadHandler} isMobile={props.isMobile}/>
       <Process Data={Data.Process}/>
-      <About Data={Data.About}/>
+      <About Data={Data.About} isMobile={props.isMobile}/>
       <Banner Data={Data.MobileFirst}/>
       <ServicesAndTech Data={Data.ServicesAndTech}/>
       <Banner Data={Data.FirstImpressions}/>
@@ -28,3 +28,26 @@ function Home() {
 }
 
 export default Home
+
+// $(function(){	
+
+//   var $window = $(window);
+// var scrollTime = 1.2;
+// var scrollDistance = 170;
+
+// $window.on("mousewheel DOMMouseScroll", function(event){
+
+// event.preventDefault();	
+
+// var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+// var scrollTop = $window.scrollTop();
+// var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+// TweenMax.to($window, scrollTime, {
+// scrollTo : { y: finalScroll, autoKill:true },
+//   ease: Power1.easeOut,
+//   overwrite: 5							
+// });
+
+// });
+// });

@@ -5,10 +5,18 @@
     flex-direction: column;
     align-items: center;
 
+    @include mobile {
+      min-height: 100%;
+    }
+
     .header-components-container {
       width: 100%;
       display: flex;
       justify-content: space-between;
+
+      @include mobile {
+        flex-direction: column;
+      }
       .text-component-header {
         cursor: pointer;
         transition: 400ms;
@@ -30,6 +38,10 @@
       }
       .text-component-container:nth-child(2) {
         text-align: right;
+
+        @include mobile {
+          text-align: center;
+        }
         .animated-container {
           transform: translateX(20%); //Animated properties
         }
@@ -39,6 +51,9 @@
     .body-components-container {
       text-align: center;
       margin-top: 25px;
+      @include mobile {
+        width: 100%;
+      }
 
       .services-body-container {
         perspective: 1000px;
@@ -46,15 +61,24 @@
           position: relative;
           width: 600px;
           margin: 20px auto;
-          padding: 30px;
+          padding: 27px;
           // opacity: 0;
           background-color: $color4;
+
+          @include mobile {
+            width: 100%;
+            padding: 20px;
+          }
           .header {
             margin-bottom: 7px;
             color: $color1;
             font-size: $body-text1;
             font-weight: 600;
             // opacity: 0;
+
+            @include mobile {
+              font-size: $body-text1-mobile;
+            }
           }
           .body-text-container {
           }
@@ -63,18 +87,39 @@
 
       .tech-body-container {
         $logo-size: 120px;
+        $mobile-logo-size: 80px;
         width: 800px;
         height: 600px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         grid-gap: 10px;
+        
+        
+        @include mobile {
+          width: 100%;
+          height: 100%;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 1fr;
+          
+          // &::before {
+          //   content: '';
+          //   width: 0;
+          //   padding-bottom: 100%;
+          //   // grid-row: 1 / 1;
+          //   // grid-column: 1 / 1;
+          // }
+        }
         .tech-logo-container {
           position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
           background-color: $color4;
+
+          @include mobile {
+            height: 40vw;
+          }
           &:after {
             content: '';
             position: absolute;
@@ -83,9 +128,16 @@
             height: 15px;
             border-radius: 50%;
             background-color: $box-shadow-color;
+            @include mobile {
+              width: $mobile-logo-size;
+            }
           }
           .tech-logo {
             max-width: $logo-size;
+
+            @include mobile {
+              width: $mobile-logo-size;
+            }
           }
         }
       }

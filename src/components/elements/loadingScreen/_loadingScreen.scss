@@ -1,0 +1,49 @@
+.loading-screen-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: $bg1;
+  z-index: 100;
+  
+
+  .loading-spinner {
+    $size: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    border-left: 5px solid $color1;
+    // border-right: 3px solid white;
+    transform: translate(-50%, -50%);
+    animation-name: loading-spinner-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    &:nth-child(2) {
+      height: $size * 0.6;
+      width: $size * 0.6;
+      border-color: $font1;
+      animation-direction: reverse;
+      // animation-duration: 6s;
+    }
+    &:nth-child(3) {
+      height: $size * 0.3;
+      width: $size * 0.3;
+      // animation-duration: 5s;
+    }
+  }
+
+  @include keyframes(loading-spinner-animation) {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(359deg);
+    }
+  }
+}

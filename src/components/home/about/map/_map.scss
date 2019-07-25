@@ -3,6 +3,13 @@
   $map-width: 600px;
   height: $map-height;
   width: $map-width;
+
+  @include mobile {
+    $mobile-map-height: 450px;
+    $mobile-map-width: 100%;
+    height: $mobile-map-height;
+    width: $mobile-map-width;
+  }
   .images-container {
     position: relative;
     height: 80%;
@@ -23,15 +30,22 @@
     height: $map-height;
     border-radius: 50%;
     animation-name: plane-orbit-animation;
-    animation-duration: 20s;
+    animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    z-index: 10;
+
+    @include mobile {
+      top: 0;
+      left: 0;
+      width: 90%;
+    }
   }
   .plane-svg {
     position: absolute;
     height: 150px;
     top: 0;
-    transform: rotate(-49deg)
+    transform: rotate(-49deg);
   }
   .text-container {
     display: flex;

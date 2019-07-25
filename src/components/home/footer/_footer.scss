@@ -2,12 +2,22 @@
   background-color: rgba(0, 0, 0, 0.1);
   height: 50px;
   margin-top: -50px;
+
+  @include mobile {
+    height: auto;
+    padding: 15px 0;
+  }
   .footer-container {
     height: 100%;
     width: $desktop-width;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
 
     .footer-text {
       font-size: 0.8rem;
@@ -17,6 +27,9 @@
     .footer-text-2-container {
       display: flex;
       align-items: center;
+      @include mobile {
+        margin-top: 10px;
+      }
     }
 
     .powered-by-image {

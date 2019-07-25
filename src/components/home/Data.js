@@ -39,7 +39,7 @@ export const About = {
   section1: {
     header: 'ABOUT.',
     subHeader: 'Programmer / Explorer',
-    body: 'I love discovering new tech, new countries, and new cultures. I travel any chance I get and my computers never more than an arms reach away.'
+    body: 'Discovering new tech, new countries, and new cultures. I travel any chance I get and my computers never more than an arms reach away.'
   },
   section2: {
     header: '',

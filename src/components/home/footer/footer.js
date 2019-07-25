@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
+import { TimelineLite } from 'gsap/all'
+import VisibilitySensor from 'react-visibility-sensor'
 
 export default class Footer extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      visible: false
+    }
+  }
+
   render() {
     return (
       <div className='footer-wrapper flex-wrapper'>
