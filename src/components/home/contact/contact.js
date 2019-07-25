@@ -8,7 +8,7 @@ export default class Contact extends Component {
           <a  className='email-link' href={`mailto:${this.props.Data.email}`}>{this.props.Data.email}</a>
           <div className='logo-container'>
             {this.props.Data.other.map((item, index) =>
-              <a href={item.link}><img className='logo-image' src={item.logo}/></a>
+              <a href={item.link} key={index}><img className='logo-image' src={item.logo} alt='logo'/></a>
             )}
           </div>
         </div>

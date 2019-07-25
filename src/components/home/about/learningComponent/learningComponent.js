@@ -3,7 +3,6 @@ import { TimelineLite } from 'gsap/all'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import learningImg from './../media/reactNative.png'
-import { ReactComponent as CogsImg } from './../media/cogs.svg'
 import { ReactComponent as CogImg } from './../media/cog.svg'
 
 export default class LearningComponent extends Component {
@@ -51,12 +50,12 @@ export default class LearningComponent extends Component {
         <div className='learning-wrapper'>
           <p className='learning-header body-text' ref={elem => this.header = elem}>{this.props.data.header}</p>
           <div className='image-container' ref={elem => this.image = elem}>
-            <img className='learning-image' src={learningImg}/>
+            <img className='learning-image' src={learningImg} alt='React Native Logo'/>
           </div>
           <p className='learning-footer' ref={elem => this.footer = elem}>{this.props.data.footer}</p>
           <div className='cogs-image-container' ref={elem => this.cogs = elem}>
             {Array(3).fill().map((_, index) => (
-              <CogImg className={`cogs-image cog-${index}`}/>
+              <CogImg className={`cogs-image cog-${index}`} key={index}/>
             ))}
           </div>
         </div>

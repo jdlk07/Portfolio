@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TimelineLite } from 'gsap/all'
-import MediaQuery from 'react-responsive'
 
 import ScrollIcon from './../../elements/scrollIcon/scrollIcon'
 
@@ -97,7 +96,7 @@ const HeroImage = React.forwardRef((props, ref) => {
     return (
       <div className='hero-image-wrapper'>
         <div className='hero-image-container' ref={ref1}>
-          <img className='hero-image' src={props.Data.heroImg} ref={ref2} alt='Hero Image' onLoad={props.onLoadHandler}/>
+          <img className='hero-image' src={props.Data.heroImg} ref={ref2} alt='Me!' onLoad={props.onLoadHandler}/>
           <p className='hero-image-caption'>{props.Data.imageCaption}</p>
         </div>
       </div>
@@ -110,7 +109,7 @@ const MobileHeroImage = React.forwardRef((props, ref) => {
   if (props.isMobile) {
     return (
       <div className='mobile-hero-image-wrapper' ref={ref1}>
-        <img className='mobile-hero-image' src={props.Data.heroImg} alt='Hero Image' onLoad={props.onLoadHandler} ref={ref2}/>
+        <img className='mobile-hero-image' src={props.Data.heroImg} alt='Me!' onLoad={props.onLoadHandler} ref={ref2}/>
       </div>
     )
   }
@@ -147,10 +146,8 @@ export default class Intro extends Component {
   scrollHandler(event) {
     if (window.pageYOffset === 0) {
       if (event.nativeEvent.wheelDelta > 0 && this.state.expand) {
-        console.log('scrolled Up!')
         this.setState({expand: !this.state.expand})
       } else if (event.nativeEvent.wheelDelta < 0 && !this.state.expand) {
-        console.log('scrolled Down!')
         this.setState({expand: !this.state.expand})
       }
     }
@@ -192,7 +189,6 @@ export default class Intro extends Component {
     
       //Locks scrolling on load / update if at the top of the page.
       if (window.pageYOffset === 0) {
-        console.log("hidden on mount!")
         document.body.style.overflow = 'hidden'
       } else {
         this.setState({expand: true})
@@ -213,7 +209,6 @@ export default class Intro extends Component {
     }
   }
   render() {
-    console.log(`mobile state = ${this.props.isMobile}`)
     if (this.props.isMobile) {
       document.body.style.overflow = ''
       this.myTween.play()
@@ -239,7 +234,7 @@ export default class Intro extends Component {
             </div>
             <div className='body-container'>
               <p className='body-text body-text-1'>{this.props.Data.paragraph1}</p>
-              <a className='read-more-btn' onClick={this.clickHandler} ref={elem => this.readMoreBtn = elem}>Read More</a>
+              <button className='read-more-btn' onClick={this.clickHandler} ref={elem => this.readMoreBtn = elem}>Read More</button>
               <MobileHeroImage Data={this.props.Data} ref={{ ref1: elem => this.MobileHeroContainer =elem, ref2: elem => this.MobileHeroImage = elem }} onLoadHandler={this.onLoadHandler} isMobile={this.props.isMobile}/>
               <p className='body-text body-text-2' ref={elem => this.bodyText2 = elem}>{this.props.Data.paragraph2}</p>
               <p className='body-text body-text-3' ref={elem => this.bodyText3 = elem}>{this.props.Data.paragraph3}</p>

@@ -21,7 +21,7 @@ const Icons = () => {
   ]
   return(
     Icons.map((Icon, index) =>
-      <div className='icon-wrapper'>
+      <div className='icon-wrapper' key={index}>
         <div className='svg-container'>
           <Icon.icon/>
         </div>

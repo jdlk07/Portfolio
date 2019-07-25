@@ -18,7 +18,6 @@ export default class BannerCaption extends Component {
 
   }
   visibilityHandler(isVisible) {
-    console.log('visibility handler')
     if (isVisible) {
       this.setState({ visible: true })
     } else {

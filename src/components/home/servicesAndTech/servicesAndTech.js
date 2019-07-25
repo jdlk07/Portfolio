@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Transition } from 'react-transition-group'
-import { TweenMax, TimelineLite } from 'gsap/all'
+import { TweenMax } from 'gsap/all'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import ServicesBody from './components/servicesBody'

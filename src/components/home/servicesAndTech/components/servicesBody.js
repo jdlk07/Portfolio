@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Transition } from 'react-transition-group'
-import { TweenMax, TimelineLite } from 'gsap/all'
+import { TimelineLite } from 'gsap/all'
 
 export default class servicesBody extends Component {
   constructor(props) {

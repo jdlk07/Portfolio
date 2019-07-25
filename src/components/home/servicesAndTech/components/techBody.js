@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Transition } from 'react-transition-group'
-import { TweenMax, TimelineLite } from 'gsap/all'
+import { TimelineLite } from 'gsap/all'
 
 export default class servicesBody extends Component {
   constructor(props) {
@@ -53,8 +53,8 @@ export default class servicesBody extends Component {
         <div className='tech-body-container'>
           {this.props.data.map((logo, index) => {
             return (
-              <div className='tech-logo-container' ref={elem => this.logoContainer[index] = elem}>
-                <img className='tech-logo' src={logo} ref={elem => this.logo[index] = elem}/>
+              <div className='tech-logo-container' key={index} ref={elem => this.logoContainer[index] = elem}>
+                <img className='tech-logo' src={logo} alt='tech-logo' ref={elem => this.logo[index] = elem}/>
               </div>
             )
           })}
